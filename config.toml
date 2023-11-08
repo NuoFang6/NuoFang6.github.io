@@ -1,4 +1,0 @@
-baseURL = 'https://nuofang.gitee.io/'
-languageCode = 'zh-cn'
-title = 'My New Hugo Site'
-theme = "hugo-theme-stack"

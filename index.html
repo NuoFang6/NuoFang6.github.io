@@ -1,11 +1,36 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <!--网页标题-->
+  <title>灵弦 Under development</title>
+  <!--图标来自pixiv ID: 94763503 仅学习使用-->
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--链接css文件-->
+  <link rel="stylesheet" href="style.css">
+  <!--描述-->
+  <meta name="description" content="开发中 未成型">
+  <meta name="author" content="诺芳">
 </head>
+
 <body>
-    <p><a href="./public/index.html">6</a></p>
+  <h1>段落标题123456789</h1>
+  <p>聊天框<input type="text"></p>
+  <p>内容123456789<br>在不产生一个新段落的情况下进行换行</p>
+  <hr><!--主题性中断元素,一般就是一条水平的直线,不需要结束-->
+  <p>
+    <picture>
+      <source media="(max-width: 1766px)" srcset="/images/pixiv44873217_856x1041.jpg" />
+      <source media="(min-width: 1767px)" srcset="/images/pixiv44873217_1767x1041.jpg" />
+      <img src="/images/pixiv44873217_1767x1041.jpg" />
+    </picture><!--响应式图片，没做好-->
+  </p>
+  <p><a href="../mp3player/index.html">音乐播放器</a></p>
+  <p>作者gitee
+    <a href="https://gitee.com/nuofang" target="_blank" rel="noopener noreferrer"><img src="gitee-logo-black.svg" alt="作者gitee"></a><!--targetblank用于在新标签页中显示链接-->
+  </p>
 </body>
+
 </html>
