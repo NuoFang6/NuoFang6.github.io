@@ -1,0 +1,42 @@
+@font-face {
+  font-family: "MiSans";
+  src: url("../fonts/MiSans/MiSansVF.ttf") format("truetype");
+  /* 可变字体无需设置font-weight:  */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  overflow: hidden;
+  height: auto;
+  margin: 0;
+}
+.视频背景 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: auto;
+  margin: auto;
+  height: 100%;
+  z-index: -100;
+}
+.mainbody {
+  position: relative;
+  z-index: 1;
+}
+
+#gitee图标.作者链接 {
+  width: 70px;
+  padding-top: 5px;
+}
+p.作者链接 {
+  display: flex;
+  align-items: center;
+}
