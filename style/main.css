@@ -5,6 +5,7 @@
 }
 
 * {
+  font-family: "MiSans";
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -72,6 +73,7 @@ html::before {
 .mainbody .right h1 {
   margin-top: 3rem;
   text-align: center;
+  font-weight: 650;
 }
 
 .mainbody .right form {
@@ -88,17 +90,18 @@ html::before {
   border: none;
   background-color: rgba(0, 0, 0, 0);
   /* 背景改透明 */
+  color: rgba(94, 155, 255, 1);
+  font-size: 1rem;
   width: 60%;
   height: 2.8rem;
-  margin: 3rem 0.3rem 0rem 0.3rem;
+  margin: 2.6rem 0.3rem 0.5rem 0.3rem;
   padding: 0 0.5rem 0 0.5rem;
-  border-bottom: 1px solid rgba(94, 155, 255, 0.55);
+  border-bottom: 1px solid rgba(94, 155, 255, 0.6);
   font-weight: 400;
-  font-size: 1rem;
 }
 
 .mainbody .right form .输入框::placeholder {
-  color: rgba(128, 177, 255, 0.55);
+  color: rgba(128, 177, 255, 0.6);
 }
 
 .mainbody .right form .输入框:focus {
@@ -111,9 +114,9 @@ html::before {
 .mainbody .right form .提交 {
   outline: none;
   border: none;
-  margin: 3.8rem 0 3rem 0;
+  margin: 3.33rem 0 3rem 0;
   border-radius: 5rem;
-  font-weight: 500;
+  font-weight: 400;
   font-size: large;
   width: 15rem;
   height: 3.2rem;
@@ -130,14 +133,14 @@ html::before {
   /* 水平方向均匀分布 */
   width: 100%;
   text-align: center;
-  margin-top: 1.5rem;
+  margin-top: 1.8rem;
 }
 
 #注册账号,
 #找回密码 {
   width: auto;
   margin: 0 6rem 0 6rem;
-  color: rgba(128, 177, 255, 0.7);
+  color: rgba(128, 177, 255, 0.75);
   text-decoration: none;
   text-align: center;
 }
@@ -149,7 +152,8 @@ html::before {
 }
 
 #hitokoto {
-  margin-top: 2.65rem;
+  font-size: 0.9rem;
+  margin-top: 3rem;
   text-align: center;
 }
 
