@@ -15,28 +15,44 @@
   </head>
 
   <body>
-    <video
-      src="./video/春至.mp4"
-      class="视频背景"
-      muted
-      loop
-      autoplay
-      preload="auto"
-    ></video>
     <div class="mainbody">
-      <h1></h1>
-      <p>搜索框<input type="text" /></p>
-      <div class="作者链接">
-        <p class="作者链接">
-          看看我的：<a href="https://gitee.com/nuofang" target="_blank"
+      <div class="left"></div>
+      <div class="right">
+        <h1>登&nbsp;&nbsp;录</h1>
+        <form action="">
+          <input
+            class="输入框"
+            type="text"
+            placeholder="用户名"
+            maxlength="30"
+            pattern="[a-zA-Z0-9]+"
+          />
+          <input
+            class="输入框"
+            type="password"
+            placeholder="密码"
+            maxlength="30"
+            pattern="[a-zA-Z0-9]+"
+          />
+          <input class="提交" type="submit" value="Login">
+        </form>
+        <!-- 请注意，以下的示例包含超链接，您可能需要手动配置样式使其不变色。如果您嫌麻烦，可以移除。 -->
+        <div id="hitokoto">一言获取中...</div>
+        <!-- 本例不能添加链接内容，放在此处只是因为此接口比较方便，也许能够解决大部分的需求-->
+        <script
+          src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto"
+          defer
+        ></script>
+        <div class="作者链接">
+          <a href="https://gitee.com/nuofang" target="_blank"
             ><img
               src="images\gitee-logo-black.min.svg"
               alt="作者gitee"
-              title="( •_•)>点击图标跳转"
+              title="( •_•)>点击图标跳转我的首页"
               class="作者链接"
               id="gitee图标" /></a
           ><!--targetblank用于在新标签页中显示链接-->
-        </p>
+        </div>
       </div>
     </div>
   </body>
