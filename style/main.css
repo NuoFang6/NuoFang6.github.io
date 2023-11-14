@@ -101,7 +101,7 @@ html::before {
 }
 
 .mainbody .right form .输入框::placeholder {
-  color: rgba(128, 177, 255, 0.6);
+  color: rgba(128, 177, 255, 0.7);
 }
 
 .mainbody .right form .输入框:focus {
@@ -139,8 +139,8 @@ html::before {
 #注册账号,
 #找回密码 {
   width: auto;
-  margin: 0 6rem 0 6rem;
-  color: rgba(128, 177, 255, 0.75);
+  margin: 0 5.5rem 0 6rem;
+  color: rgba(128, 177, 255, 0.8);
   text-decoration: none;
   text-align: center;
 }

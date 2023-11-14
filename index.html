@@ -19,9 +19,12 @@
       <div class="left"></div>
       <div class="right">
         <h1>登&nbsp;录</h1>
-        <form action="">
+        <form onsubmit="event.preventDefault(),validate()">
+          <!-- event.preventDefault()用于去除默认行为 -->
+          <!-- 表单 -->
           <input
             class="输入框"
+            id="username"
             type="text"
             placeholder="用户名"
             maxlength="30"
@@ -29,6 +32,7 @@
           />
           <input
             class="输入框"
+            id="password"
             type="password"
             placeholder="密码"
             maxlength="30"
@@ -59,5 +63,6 @@
         </div>
       </div>
     </div>
+    <script src="scripts/main.js" defer></script>
   </body>
 </html>
