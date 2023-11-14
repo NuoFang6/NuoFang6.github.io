@@ -1,6 +1,6 @@
 @font-face {
   font-family: "MiSans";
-  src: url("../fonts/MiSans/MiSansVF.ttf") format("truetype");
+  src: url("/fonts/MiSans/MiSansVF.ttf") format("truetype");
   /* VF可变字体无需设置font-weight:  */
 }
 
@@ -41,7 +41,7 @@ html::before {
   width: 56rem;
   height: 35rem;
   background-color: rgba(255, 255, 255, 0.55);
-  border-radius: 1rem;
+  border-radius: 1.5rem;
   box-shadow: 0 0 2rem 0.1rem rgba(0, 0, 0, 0.1);
   z-index: 1;
 }
@@ -57,7 +57,7 @@ html::before {
   content: "";
   position: absolute;
   background-size: cover;
-  background-image: url(../images/pz112528799.lite.png);
+  background-image: url(/images/pz112528799.lite.png);
   background-position: center center;
   /* 设置背景图像的水平位置和垂直位置 */
   border-radius: 2px;
@@ -155,6 +155,14 @@ html::before {
   font-size: 0.9rem;
   margin-top: 3rem;
   text-align: center;
+}
+
+#hitokoto {
+  color: #80b1ff;
+  text-decoration: none;
+}
+#hitokoto:hover {
+  text-decoration: underline 1px #80b1ff;
 }
 
 .作者链接 {

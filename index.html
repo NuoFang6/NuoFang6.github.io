@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
-<head>
-  <!--网页标题-->
-  <title>诺芳的导航页 ヾ(≧▽≦*)o</title>
-  <!--所有内容素材仅学习使用，如侵权请联系删除，Q:991921514-->
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!--链接css文件-->
-  <link rel="stylesheet" href="style/main.css" />
-  <!--描述-->
-  <meta name="description" content="开发中 未成型" />
-  <meta name="author" content="诺芳" />
-</head>
+  <head>
+    <!--网页标题-->
+    <title>诺芳的导航页 ヾ(≧▽≦*)o</title>
+    <!--所有内容素材仅学习使用，如侵权请联系删除，Q:991921514-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--链接css文件-->
+    <link rel="stylesheet" href="style/main.css" />
+    <!--描述-->
+    <meta name="description" content="开发中 未成型" />
+    <meta name="author" content="诺芳" />
+  </head>
 
   <body>
     <div class="mainbody">
@@ -46,16 +45,15 @@
           <a id="找回密码" href="">找回密码</a>
         </div>
         <!-- 请注意，以下的示例包含超链接，您可能需要手动配置样式使其不变色。如果您嫌麻烦，可以移除。 -->
-        <div id="hitokotoBox">『<span id="hitokoto">一言获取中...</span>』</div>
-        <!-- 本例不能添加链接内容，放在此处只是因为此接口比较方便，也许能够解决大部分的需求-->
-        <script
-          src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto"
-          defer
-        ></script>
+        <div id="hitokotoBox">
+          『<a id="hitokoto" target="_blank">一言获取中...</a>』
+        </div>
+        <script src="scripts/main.js" defer></script>
+        <script src="scripts/hitokoto.js" defer></script>
         <div class="作者链接">
           <a href="https://gitee.com/nuofang" target="_blank"
             ><img
-              src="images\gitee-logo-black.lite.svg"
+              src="images/gitee-logo-black.lite.svg"
               alt="作者gitee"
               title="( •_•)>点击图标跳转我的首页"
               class="作者链接"
@@ -64,6 +62,5 @@
         </div>
       </div>
     </div>
-    <script src="scripts/main.js" defer></script>
   </body>
 </html>
