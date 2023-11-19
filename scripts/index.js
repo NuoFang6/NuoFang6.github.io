@@ -1,3 +1,4 @@
+
 function welcome() {
   let userName;
   do {
@@ -27,7 +28,8 @@ function validate() {
   }
 }
 
-window.onload = function () {
-  //window.onload在页面加载完后执行一次
-  welcome();
-};
+// window.onload = function () {
+//   //window.onload在页面加载完后执行一次
+//   welcome();
+// };
+

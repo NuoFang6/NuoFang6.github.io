@@ -5,6 +5,7 @@
 		}
 	],
 	"settings": {
-		"liveServer.settings.multiRootWorkspaceName": "nuofang"
+		"liveServer.settings.multiRootWorkspaceName": "nuofang",
+
 	}
 }
