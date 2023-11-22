@@ -23,7 +23,7 @@ body {
   /* 设置主轴和交叉轴的对齐方式为居中 */
 }
 .mainbody {
-  width: 75rem;
+  width: 75%;
   height: 35rem;
   background-color: rgba(255, 255, 255, 0.8);
 }
