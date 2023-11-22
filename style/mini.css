@@ -25,10 +25,14 @@
     height: 100%;
     background-color: rgba(255, 255, 255, 0.6);
   }
-
-  #注册账号,
+  .账号相关 {
+  justify-content: center;
+  }
+  #注册账号{
+    margin-right: 18vw;
+  }
   #找回密码 {
-    margin: 0 4rem 0 4rem;
+    margin-left: 18vw;
   }
   #hitokotoBox {
     display: block;

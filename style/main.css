@@ -77,12 +77,16 @@ body {
 }
 
 .mainbody .right {
+  display: flex;
+  flex-direction: column;
+  /* 文本行堆叠的方向(垂直堆叠、列布局) */
+  align-items: center;
+  /* 交叉轴对齐方式，不能作用于子元素的子元素 */
   width: 65%;
 }
 
 .mainbody .right h1 {
   margin-top: 3rem;
-  text-align: center;
   font-weight: 650;
 }
 
@@ -140,33 +144,41 @@ body {
 }
 
 .账号相关 {
-  justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  /* 允许子元素在需要时进行换行 */
+  justify-content: center;
   /* 水平方向均匀分布 */
   width: 100%;
   text-align: center;
   margin-top: 1.8rem;
 }
 
-#注册账号,
-#找回密码 {
+.账号相关 #注册账号,
+.账号相关 #找回密码 {
   width: auto;
   height: auto;
-  margin: 0 5.5rem 0 6rem;
+  margin-right: 5.5rem;
   color: rgba(128, 177, 255, 0.8);
   text-decoration: none;
   text-align: center;
 }
+.账号相关 #找回密码 {
+  margin-right: 0;
+  margin-left: 5.5rem;
+}
 
-#注册账号:hover,
-#找回密码:hover {
+.账号相关 #注册账号:hover,
+.账号相关 #找回密码:hover {
   color: rgba(128, 177, 255, 1);
   text-decoration: underline 1px #80b1ff;
 }
 
 .mainbody .right #hitokotoBox {
+  flex-wrap: wrap;
+  position: absolute;
+  bottom: 1px;
   font-size: 0.9rem;
-  margin-top: 3rem;
-  text-align: center;
 }
 
 .mainbody .right #hitokoto {
@@ -179,25 +191,11 @@ body {
 
 .作者链接 {
   position: absolute;
-  right: -12px;
+  right: -22px;
   bottom: 3px;
 }
 
-#gitee图标.作者链接 {
+.作者链接 #gitee图标 {
   width: 40px;
-}
-
-img.作者链接 {
   opacity: 5%;
 }
-
-/* .视频背景 {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: auto;
-  margin: auto;
-  height: 100%;
-  z-index: -100;
-} */
-/* gitee就是 狗！东！西! */
