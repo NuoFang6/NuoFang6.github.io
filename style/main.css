@@ -67,7 +67,9 @@ body {
   content: "";
   position: absolute;
   background-size: cover;
-  background-image: url(/images/pz112528799.lite.png);
+  /* background-image: url(/images/pz112528799.lite.png); */
+  background-image: url(https://t.mwm.moe/mp);
+  /* TODO 自动改变主题色 */
   background-position: center center;
   /* 设置背景图像的水平位置和垂直位置 */
   border-radius: 2px;
