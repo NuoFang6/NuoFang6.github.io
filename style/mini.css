@@ -5,18 +5,16 @@
     overflow: hidden;
   }
   .mainbody {
-    display: flex;
-    margin: 1vh 2vw 1vh 2vw;
-    width: 95vw !important;
-    height: 97vh !important;
+    margin: auto;
+    width: 95% !important;
+    height: 95% !important;
   }
   .mainbody .left {
-    display: block;
     position: absolute;
     width: 100%;
     height: 100%;
     background-position: center 0 !important;
-    z-index: -1;
+    z-index: -99;
     background-size: cover;
   }
   .mainbody .right {
@@ -24,15 +22,30 @@
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.6);
+    z-index: 0;
+  }
+  .mainbody .right form .输入框 {
+    width: 70%;
+  }
+  .mainbody .right form .提交 {
+    width: 55vw;
+    margin: auto;
+    margin-top: 8vh;
   }
   .账号相关 {
-  justify-content: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 8vh !important;
   }
-  #注册账号{
-    margin-right: 18vw;
+  .账号相关 #注册账号,
+  .账号相关 #找回密码 {
+    color: rgba(128, 177, 255, 1);
+  }
+  #注册账号 {
+    margin-right: 14% !important;
   }
   #找回密码 {
-    margin-left: 18vw;
+    margin-left: 14% !important;
   }
   #hitokotoBox {
     display: block;
@@ -42,5 +55,6 @@
     right: 0;
     margin-left: auto;
     margin-right: auto;
+    z-index: -1;
   }
 }

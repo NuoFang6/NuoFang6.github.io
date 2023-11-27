@@ -129,7 +129,7 @@ body {
 .mainbody .right form .提交 {
   outline: none;
   border: none;
-  margin: 3.33rem 4rem 3rem 4rem;
+  margin: 3.33rem 4rem 0rem 4rem;
   border-radius: 5rem;
   font-weight: 400;
   font-size: large;
@@ -151,7 +151,7 @@ body {
   /* 水平方向均匀分布 */
   width: 100%;
   text-align: center;
-  margin-top: 1.8rem;
+  margin-top: 4rem;
 }
 
 .账号相关 #注册账号,

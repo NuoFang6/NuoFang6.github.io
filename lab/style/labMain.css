@@ -30,7 +30,7 @@ body {
 
 button {
   all: unset;
-  position:absolute;
+  position: absolute;
   display: block;
   height: 2rem;
   bottom: 0;
