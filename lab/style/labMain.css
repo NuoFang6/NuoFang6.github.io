@@ -11,6 +11,7 @@ html::before {
   background-image: url(https://t.mwm.moe/ycy/);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
 }
 body {
   display: flex;
@@ -27,8 +28,37 @@ body {
   height: 35rem;
   background-color: rgba(255, 255, 255, 0.8);
 }
-
-button {
+#test {
+  color: blue;
+}
+#框 {
+  display: block;
+  margin: 1rem;
+  padding: 1rem;
+  border: 2px black solid;
+  height: 20rem;
+  width: 25rem;
+}
+#提示 {
+  margin-bottom: 1rem;
+}
+input {
+  height: 1.5rem;
+}
+#选项 {
+  display: flex;
+  justify-content: center;
+}
+label#公制 {
+  margin-right: 4rem;
+}
+button#生成 {
+  display: block;
+  /* margin: 0 30% 0 30% ; */
+  margin: auto;
+  margin-top: 1rem;
+}
+button#switch {
   all: unset;
   position: absolute;
   display: block;
