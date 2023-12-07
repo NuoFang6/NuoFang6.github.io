@@ -8,3 +8,7 @@ function draw() {
     canvas.textContent = "不支持";
   }
 }
+function onLoad() {
+  draw();
+}
+document.addEventListener("DOMContentLoaded", onLoad);
