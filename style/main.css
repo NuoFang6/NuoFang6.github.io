@@ -2,8 +2,25 @@
   font-family: "MiSans";
   src: url("/fonts/MiSans/MiSansVF.ttf") format("truetype");
   /* VF可变字体无需设置font-weight:  */
+  /* TODO 提高加载速度 */
 }
 
+@keyframes fadeIn {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+:root {
+  --textFocusColor: #80b1ff;
+  --textColor: #80b1ff;
+  /* 定义变量 */
+  /* TODO 使用变量统一元素 */
+}
 * {
   font-family: "MiSans";
   margin: 0;
@@ -14,8 +31,8 @@
 html {
   font-size: 16px;
   /* 1rem = 16px */
-  color: #80b1ff;
-  /* 字体颜色 */
+  color: var(--textColor);
+  /* 通过变量引用默认字体颜色 */
 }
 
 html::before {
@@ -62,14 +79,18 @@ body {
   height: 100%;
   background-color: #bae0fc;
 }
-
+.mainbody .left #加载提示 {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
 .mainbody .left::before {
   content: "";
   position: absolute;
   background-size: cover;
   /* background-image: url(/images/pz112528799.lite.png); */
   background-image: url(https://t.mwm.moe/mp);
-  /* TODO 自动改变主题色 */
+  /* TODO 根据图片自动改变主题色 */
   background-position: center center;
   /* 设置背景图像的水平位置和垂直位置 */
   border-radius: 2px;
@@ -114,7 +135,7 @@ body {
   padding: 0 0.5rem 0 0.5rem;
   border-bottom: 1px solid rgba(94, 155, 255, 0.6);
   font-weight: 400;
-  border-radius: 0rem;
+  border-radius: 0.2rem;
 }
 
 .mainbody .right form .输入框::placeholder {
@@ -125,8 +146,9 @@ body {
   border-bottom: 2px solid rgba(94, 155, 255, 1);
 }
 .mainbody .right form .输入框:focus::placeholder {
-  color: rgba(128, 177, 255, 1);
+  color: var(--textColor);
 }
+/* TODO 输入时显示一个背景提高对比度 */
 
 .mainbody .right form .提交 {
   outline: none;
@@ -183,13 +205,34 @@ body {
   font-size: 0.9rem;
 }
 
-.mainbody .right #hitokoto {
-  color: #80b1ff;
+.mainbody .right #hitokotoBox .hitokoto {
+  color: #70a7ff;
   text-decoration: none;
 }
-.mainbody .right #hitokoto:hover {
+.mainbody .right #hitokotoBox:hover .hitokoto#hitokotoMain {
   text-decoration: underline 1px #80b1ff;
 }
+.mainbody .right #hitokotoBox .hitokoto#hitokotoFrom {
+  display: none;
+}
+/* ! 电脑端无法正常显示hitokotoFrom */
+/* TODO 添加动画 */
+/* .mainbody .right #hitokotoBox .hitokoto#hitokotoFrom {
+  position: absolute;
+  font-style: italic;
+  font-size: 0.8rem;
+  opacity: 0;
+  z-index: 99;
+  transition: opacity 0.8s ease-out;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+.mainbody .right #hitokotoBox:hover .hitokoto#hitokotoFrom {
+  opacity: 1;
+}
+.mainbody .right #hitokotoBox:not(:hover) .hitokoto#hitokotoFrom {
+  opacity: 0;
+} */
 
 .作者链接 {
   position: absolute;

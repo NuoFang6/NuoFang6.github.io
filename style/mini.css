@@ -57,4 +57,21 @@
     margin-right: auto;
     z-index: -1;
   }
+  .mainbody .right #hitokotoBox .hitokoto#hitokotoFrom {
+    display: inline;
+    /* position: absolute; */
+    font-style: italic;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0, 0, 0.2, 1);
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+  .mainbody .right #hitokotoBox:hover .hitokoto#hitokotoFrom {
+    opacity: 1;
+  }
+  .mainbody .right #hitokotoBox:not(:hover) .hitokoto#hitokotoFrom {
+    opacity: 0;
+  }
+  /* TODO 优化触屏显示方式 */
 }
