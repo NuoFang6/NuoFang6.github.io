@@ -5,21 +5,11 @@
   /* TODO 提高加载速度 */
 }
 
-@keyframes fadeIn {
-  from {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
 :root {
-  --textFocusColor: #80b1ff;
-  --textColor: #80b1ff;
+  --textFocusColor: rgb(116, 169, 255);
+  --textNoFocusColor: rgba(122, 178, 255, 0.7);
   /* 定义变量 */
-  /* TODO 使用变量统一元素 */
+  /* DONE 使用变量统一元素 */
 }
 * {
   font-family: "MiSans";
@@ -31,7 +21,7 @@
 html {
   font-size: 16px;
   /* 1rem = 16px */
-  color: var(--textColor);
+  color: var(--textNoFocusColor);
   /* 通过变量引用默认字体颜色 */
 }
 
@@ -77,12 +67,7 @@ body {
   position: relative;
   width: 35%;
   height: 100%;
-  background-color: #bae0fc;
-}
-.mainbody .left #加载提示 {
-  display: block;
-  width: 100%;
-  text-align: center;
+  background-color: #c2e0ff;
 }
 .mainbody .left::before {
   content: "";
@@ -109,6 +94,7 @@ body {
 }
 
 .mainbody .right h1 {
+  color: var(--textFocusColor);
   margin-top: 3rem;
   font-weight: 650;
 }
@@ -123,11 +109,12 @@ body {
 }
 
 .mainbody .right form .输入框 {
+  box-sizing: border-box;
   outline: none;
   border: none;
   background-color: rgba(0, 0, 0, 0);
   /* 背景改透明 */
-  color: rgba(94, 155, 255, 1);
+  color: var(--textFocusColor);
   font-size: 1rem;
   width: 60%;
   height: 2.8rem;
@@ -139,14 +126,14 @@ body {
 }
 
 .mainbody .right form .输入框::placeholder {
-  color: rgba(128, 177, 255, 0.7);
+  color: var(--textNoFocusColor);
 }
 
 .mainbody .right form .输入框:focus {
-  border-bottom: 2px solid rgba(94, 155, 255, 1);
+  border-bottom: 2px solid var(--textFocusColor);
 }
 .mainbody .right form .输入框:focus::placeholder {
-  color: var(--textColor);
+  color: var(--textFocusColor);
 }
 /* TODO 输入时显示一个背景提高对比度 */
 
@@ -183,7 +170,7 @@ body {
   width: auto;
   height: auto;
   margin-right: 5.5rem;
-  color: rgba(128, 177, 255, 0.8);
+  color: var(--textNoFocusColor);
   text-decoration: none;
   text-align: center;
 }
@@ -194,46 +181,40 @@ body {
 
 .账号相关 #注册账号:hover,
 .账号相关 #找回密码:hover {
-  color: rgba(128, 177, 255, 1);
-  text-decoration: underline 1px #80b1ff;
+  color: var(--textFocusColor);
+  text-decoration: underline 1px var(--textFocusColor);
 }
 
 .mainbody .right #hitokotoBox {
   flex-wrap: wrap;
   position: absolute;
   bottom: 1px;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 
 .mainbody .right #hitokotoBox .hitokoto {
-  color: #70a7ff;
+  color: var(--textFocusColor);
   text-decoration: none;
 }
 .mainbody .right #hitokotoBox:hover .hitokoto#hitokotoMain {
-  text-decoration: underline 1px #80b1ff;
+  text-decoration: underline 1px var(--textFocusColor);
 }
+
+/* DONE 添加动画 */
 .mainbody .right #hitokotoBox .hitokoto#hitokotoFrom {
-  display: none;
-}
-/* ! 电脑端无法正常显示hitokotoFrom */
-/* TODO 添加动画 */
-/* .mainbody .right #hitokotoBox .hitokoto#hitokotoFrom {
+  display: inline;
+  width: 20rem;
   position: absolute;
+  top: 1px;
   font-style: italic;
   font-size: 0.8rem;
   opacity: 0;
-  z-index: 99;
-  transition: opacity 0.8s ease-out;
-  word-wrap: break-word;
-  white-space: pre-wrap;
+  transition: opacity 0.6s ease-out;
 }
 .mainbody .right #hitokotoBox:hover .hitokoto#hitokotoFrom {
   opacity: 1;
 }
-.mainbody .right #hitokotoBox:not(:hover) .hitokoto#hitokotoFrom {
-  opacity: 0;
-} */
-
+/* TODO 页面加载完成时会闪现 */
 .作者链接 {
   position: absolute;
   right: -22px;

@@ -1,48 +1,73 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-	<head>
-		<!--网页标题-->
-		<title>诺芳的导航页 ヾ(≧▽≦*)o</title>
-		<!--所有内容素材仅学习使用，如侵权请联系删除，Q:991921514-->
-		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-		<!--链接css文件-->
-		<link rel="stylesheet" href="/style/main.css" />
-		<link rel="stylesheet" href="/style/mini.css" />
-		<!--描述-->
-		<meta name="description" content="所有内容素材仅学习使用，如侵权或其它问题请联系Q:991921514" />
-		<meta name="author" content="诺芳" />
-	</head>
+  <head>
+    <!--网页标题-->
+    <title>诺芳的导航页 ヾ(≧▽≦*)o</title>
+    <!--所有内容素材仅学习使用，如侵权请联系删除，Q:991921514-->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <!--链接css文件-->
+    <link rel="stylesheet" href="/style/main.css" />
+    <link rel="stylesheet" href="/style/mini.css" />
+    <!--描述-->
+    <meta
+      name="description"
+      content="所有内容素材仅学习使用，如侵权或其它问题请联系Q:991921514"
+    />
+    <meta name="author" content="诺芳" />
+  </head>
 
-	<body>
-		<div class="mainbody">
-			<div class="left"><span id="加载提示">Loading...</span></div>
-			<div class="right">
-				<h1>登&nbsp;录</h1>
-				<form onsubmit="event.preventDefault(),validate()">
-					<!-- event.preventDefault()用于去除默认行为 -->
-					<!-- 表单 -->
-					<input class="输入框" id="username" type="text" placeholder="用户名" maxlength="30"
-						pattern="[a-zA-Z0-9]+" />
-					<input class="输入框" id="password" type="password" placeholder="密码" maxlength="30"
-						pattern="[a-zA-Z0-9]+" />
-					<input class="提交" type="submit" value="Login" />
-				</form>
-				<div class="账号相关">
-					<a id="注册账号" href="">注册账号</a>
-					<a id="找回密码" href="">找回密码</a>
-				</div>
-				<div id="hitokotoBox">
-					『<a class="hitokoto" id="hitokotoMain" target="_blank">一言获取中...</a>』 <span class="hitokoto" id="hitokotoFrom"></span>
-				</div>
-				<script src="scripts/hitokoto.js"></script>
-				<script src="scripts/index.js" defer></script>
-				<div class="作者链接">
-					<a href="https://gitee.com/nuofang" target="_blank"><img src="images/gitee-logo-black.lite.svg"
-							alt="作者gitee" title="( •_•)>点击图标跳转我的首页" id="gitee图标" /></a><!--targetblank用于在新标签页中显示链接-->
-				</div>
-			</div>
-		</div>
-	</body>
+  <body>
+    <div class="mainbody">
+      <div class="left"></div>
+      <div class="right">
+        <h1>登&nbsp;录</h1>
+        <form onsubmit="event.preventDefault(),validate()">
+          <!-- event.preventDefault()用于去除默认行为 -->
+          <!-- 表单 -->
+          <input
+            class="输入框"
+            id="username"
+            type="text"
+            placeholder="用户名"
+            maxlength="30"
+            pattern="[a-zA-Z0-9]+"
+          />
+          <input
+            class="输入框"
+            id="password"
+            type="password"
+            placeholder="密码"
+            maxlength="30"
+            pattern="[a-zA-Z0-9]+"
+          />
+          <input class="提交" type="submit" value="Login" />
+        </form>
+        <div class="账号相关">
+          <a id="注册账号" href="">注册账号</a>
+          <a id="找回密码" href="">找回密码</a>
+        </div>
+        <div id="hitokotoBox">
+          『<a class="hitokoto" id="hitokotoMain" target="_blank"
+            >一言获取中...</a
+          >』 <span class="hitokoto" id="hitokotoFrom"></span>
+        </div>
+        <script src="scripts/hitokoto.js"></script>
+        <script src="scripts/index.js" defer></script>
+        <div class="作者链接">
+          <a href="https://gitee.com/nuofang" target="_blank"
+            ><img
+              src="images/gitee-logo-black.lite.svg"
+              alt="作者gitee"
+              title="( •_•)>点击图标跳转我的首页"
+              id="gitee图标" /></a
+          ><!--targetblank用于在新标签页中显示链接-->
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
