@@ -13,6 +13,7 @@
     <!--链接css文件-->
     <link rel="stylesheet" href="/style/main.css" />
     <link rel="stylesheet" href="/style/mini.css" />
+    <link rel="stylesheet" href="APlayer\dist\APlayer.min.css" />
     <!--描述-->
     <meta
       name="description"
@@ -24,7 +25,8 @@
   <body>
     <div class="mainbody">
       <div class="left"></div>
-      <div class="right">
+      <!--TODO 记得删掉 -->
+      <div class="right" id="loginForm">
         <h1>登&nbsp;录</h1>
         <form onsubmit="event.preventDefault(),validate()">
           <!-- event.preventDefault()用于去除默认行为 -->
@@ -36,6 +38,7 @@
             placeholder="用户名"
             maxlength="30"
             pattern="[a-zA-Z0-9]+"
+            autocomplete="username"
           />
           <input
             class="输入框"
@@ -44,20 +47,23 @@
             placeholder="密码"
             maxlength="30"
             pattern="[a-zA-Z0-9]+"
+            autocomplete="current-password"
           />
           <input class="提交" type="submit" value="Login" />
         </form>
         <div class="账号相关">
-          <a id="注册账号" href="">注册账号</a>
-          <a id="找回密码" href="">找回密码</a>
+          <a id="注册账号" href="#" onclick="showRegister(); return false;"
+            >注册账号</a
+          >
+          <!-- 返回 false 阻止浏览器执行默认行为 -->
+          <a id="找回密码" href="#">找回密码</a>
         </div>
         <div id="hitokotoBox">
           『<a class="hitokoto" id="hitokotoMain" target="_blank"
             >一言获取中...</a
           >』 <span class="hitokoto" id="hitokotoFrom"></span>
         </div>
-        <script src="scripts/hitokoto.js"></script>
-        <script src="scripts/index.js" defer></script>
+
         <div class="作者链接">
           <a href="https://gitee.com/nuofang" target="_blank"
             ><img
@@ -68,6 +74,61 @@
           ><!--targetblank用于在新标签页中显示链接-->
         </div>
       </div>
+      <div class="right" id="registerForm">
+        <h1>注&nbsp;册</h1>
+        <form onsubmit="event.preventDefault(),validate()">
+          <!-- event.preventDefault()用于去除默认行为 -->
+          <!-- 表单 -->
+          <input
+            class="输入框"
+            id="registerUsername"
+            type="text"
+            placeholder="用户名"
+            maxlength="30"
+            pattern="[a-zA-Z0-9]+"
+            autocomplete="username"
+          />
+          <input
+            class="输入框"
+            id="registerPassword"
+            type="password"
+            placeholder="密码"
+            maxlength="30"
+            pattern="[a-zA-Z0-9]+"
+            autocomplete="current-password"
+          />
+          <input class="提交" type="submit" value="Sign up!" />
+        </form>
+        <div class="账号相关">
+          <a id="返回登录" href="#" onclick="showLogin(); return false;"
+            >已有账号？登录</a
+          >
+        </div>
+        <!-- 返回 false 阻止浏览器执行默认行为 -->
+        <!-- <a href="#" id="registerBack" onclick="showLogin(); return false;"
+          >返回</a -->
+      </div>
     </div>
+    <script src="scripts/hitokoto.js"></script>
+    <script src="scripts/index.js" defer></script>
+
+    <script src="APlayer\dist\APlayer.min.js"></script>
+    <script src="APlayer\meting.min.js"></script>
+    <div id="aplayer"></div>
+    <meting-js
+      id="9104382620"
+      lrc-type="0"
+      server="netease"
+      type="playlist"
+      fixed="true"
+      olded="random"
+      loop="all"
+      autoplay="true"
+      mutex="true"
+      volume="0.4"
+      preload="auto"
+      mini="true"
+    >
+    </meting-js>
   </body>
 </html>

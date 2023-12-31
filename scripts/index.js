@@ -1,4 +1,3 @@
-
 function welcome() {
   let userName;
   do {
@@ -32,4 +31,24 @@ function validate() {
 //   //window.onload在页面加载完后执行一次
 //   welcome();
 // };
+function showLogin() {
+  document.getElementById("registerForm").style.opacity = "0";
+  setTimeout(function () {
+    document.getElementById("registerForm").style.display = "none";
+    document.getElementById("loginForm").style.display = "block";
+    setTimeout(function () {
+      document.getElementById("loginForm").style.opacity = "1";
+    }, 350);
+  }, 350);
+}
 
+function showRegister() {
+  document.getElementById("loginForm").style.opacity = "0";
+  setTimeout(function () {
+    document.getElementById("loginForm").style.display = "none";
+    document.getElementById("registerForm").style.display = "block";
+    setTimeout(function () {
+      document.getElementById("registerForm").style.opacity = "1";
+    }, 300);
+  }, 300);
+}

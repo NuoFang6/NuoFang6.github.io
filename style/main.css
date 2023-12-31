@@ -4,6 +4,17 @@
   /* VF可变字体无需设置font-weight:  */
   /* TODO 提高加载速度 */
 }
+@keyframes flowCss {
+  0% {
+    background-position: 5% 50%;
+  }
+  50% {
+    background-position: 95% 50%;
+  }
+  100% {
+    background-position: 5% 50%;
+  }
+}
 
 :root {
   --textFocusColor: rgb(116, 169, 255);
@@ -73,8 +84,8 @@ body {
   content: "";
   position: absolute;
   background-size: cover;
-  /* background-image: url(/images/pz112528799.lite.png); */
-  background-image: url(https://t.mwm.moe/mp);
+  background-image: url(/images/pz112528799.lite.png);
+  /* background-image: url(https://t.mwm.moe/mp); */
   /* TODO 根据图片自动改变主题色 */
   background-position: center center;
   /* 设置背景图像的水平位置和垂直位置 */
@@ -84,6 +95,17 @@ body {
   opacity: 90%;
 }
 
+#loginForm {
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 1;
+}
+#registerForm {
+  display: none;
+  position: relative;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
 .mainbody .right {
   display: flex;
   flex-direction: column;
@@ -97,6 +119,7 @@ body {
   color: var(--textFocusColor);
   margin-top: 3rem;
   font-weight: 650;
+  text-align: center;
 }
 
 .mainbody .right form {
@@ -138,6 +161,7 @@ body {
 /* TODO 输入时显示一个背景提高对比度 */
 
 .mainbody .right form .提交 {
+  will-change: background-position;
   outline: none;
   border: none;
   margin: 3.33rem 4rem 0rem 4rem;
@@ -147,7 +171,14 @@ body {
   width: 15rem;
   height: 3.2rem;
   color: white;
-  background-image: linear-gradient(120deg, #e0c3fc 0%, #8ec5fc 100%);
+  background-size: 1000px 1000px;
+  background-image: linear-gradient(
+    -225deg,
+    #2cc7d8 0%,
+    #c5c1ff 56%,
+    #ffbac3 100%
+  );
+  animation: flowCss 10s infinite linear;
 }
 
 .mainbody .right form .提交:hover {
@@ -180,12 +211,18 @@ body {
 }
 
 .账号相关 #注册账号:hover,
-.账号相关 #找回密码:hover {
+.账号相关 #找回密码:hover,
+#返回登录:hover {
   color: var(--textFocusColor);
   text-decoration: underline 1px var(--textFocusColor);
 }
-
+#返回登录 {
+  color: var(--textNoFocusColor);
+  text-decoration: none;
+  text-align: center;
+}
 .mainbody .right #hitokotoBox {
+  display: block;
   flex-wrap: wrap;
   position: absolute;
   bottom: 1px;
@@ -214,6 +251,12 @@ body {
 .mainbody .right #hitokotoBox:hover .hitokoto#hitokotoFrom {
   opacity: 1;
 }
+
+.registerForm {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
 /* TODO 页面加载完成时会闪现 */
 .作者链接 {
   position: absolute;
