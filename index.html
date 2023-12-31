@@ -13,6 +13,7 @@
     <!--链接css文件-->
     <link rel="stylesheet" href="/style/main.css" />
     <link rel="stylesheet" href="/style/mini.css" />
+    <link rel="stylesheet" href="/style/loading.css" />
     <link rel="stylesheet" href="APlayer\dist\APlayer.min.css" />
     <!--描述-->
     <meta
@@ -23,6 +24,15 @@
   </head>
 
   <body>
+    <!-- 页面预加载动画 -->
+    <div class="loadMask">
+      <!--  3 DOT LOADER  -->
+      <div class="dotBox">
+        <div class="dot-loader"></div>
+        <div class="dot-loader dot-loader--2"></div>
+        <div class="dot-loader dot-loader--3"></div>
+      </div>
+    </div>
     <div class="mainbody">
       <div class="left"></div>
       <!--TODO 记得删掉 -->
@@ -49,7 +59,7 @@
             pattern="[a-zA-Z0-9]+"
             autocomplete="current-password"
           />
-          <input class="提交" type="submit" value="Login" />
+          <input class="提交" type="submit" value="Login" onclick="login()" />
         </form>
         <div class="账号相关">
           <a id="注册账号" href="#" onclick="showRegister(); return false;"
@@ -97,7 +107,12 @@
             pattern="[a-zA-Z0-9]+"
             autocomplete="current-password"
           />
-          <input class="提交" type="submit" value="Sign up!" />
+          <input
+            class="提交"
+            type="submit"
+            value="Sign up!"
+            onclick="signUp()"
+          />
         </form>
         <div class="账号相关">
           <a id="返回登录" href="#" onclick="showLogin(); return false;"
@@ -105,13 +120,53 @@
           >
         </div>
         <!-- 返回 false 阻止浏览器执行默认行为 -->
-        <!-- <a href="#" id="registerBack" onclick="showLogin(); return false;"
-          >返回</a -->
+      </div>
+      <div class="right" id="success">
+        <h2>登录成功</h2>
+        <p>目前这里没有什么好看的...</p>
+        <a href="#" id="logout" onclick="logout(); return false;">Go Back</a>
+      </div>
+      <div class="right" id="retrieve">
+        <form onsubmit="event.preventDefault(),validate()">
+          <!-- event.preventDefault()用于去除默认行为 -->
+          <!-- 表单 -->
+          <input
+            class="输入框"
+            id="registerUsername"
+            type="text"
+            placeholder="用户名"
+            maxlength="30"
+            pattern="[a-zA-Z0-9]+"
+            autocomplete="username"
+          />
+          <input
+            class="输入框"
+            id="registerPassword"
+            type="password"
+            placeholder="密码"
+            maxlength="30"
+            pattern="[a-zA-Z0-9]+"
+            autocomplete="current-password"
+          />
+          <input
+            class="提交"
+            type="submit"
+            value="重置密码"
+            onclick="signUp()"
+          />
+        </form>
+        <div class="账号相关">
+          <a id="返回登录" href="#" onclick="showLogin(); return false;"
+            >已有账号？登录</a
+          >
+        </div>
       </div>
     </div>
     <script src="scripts/hitokoto.js"></script>
     <script src="scripts/index.js" defer></script>
-
+    <script src="scripts/mouse.js"></script>
+    <script src="scripts/loading.js"></script>
+    <script src="scripts/account.js"></script>
     <script src="APlayer\dist\APlayer.min.js"></script>
     <script src="APlayer\meting.min.js"></script>
     <div id="aplayer"></div>

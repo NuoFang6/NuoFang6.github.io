@@ -15,10 +15,9 @@
     background-position: 5% 50%;
   }
 }
-
 :root {
   --textFocusColor: rgb(116, 169, 255);
-  --textNoFocusColor: rgba(122, 178, 255, 0.7);
+  --textNoFocusColor: rgba(113, 172, 255, 0.7);
   /* 定义变量 */
   /* DONE 使用变量统一元素 */
 }
@@ -56,9 +55,26 @@ body {
   height: 100vh;
   align-items: center;
   justify-content: center;
+  /* 禁止用户选中文字 */
+  user-select: none;
   /* overflow: hidden; */
   /* 禁止滚动 */
-  cursor: url(../images/ai3fv-032nt-001.png), pointer;
+}
+
+/* 鼠标样式 */
+* {
+  cursor: url(../images/pointer.png), default !important;
+}
+a:hover,
+button:hover,
+input[type="submit"]:hover,
+.aplayer-icon:hover,
+.aplayer-button:hover {
+  cursor: url(../images/link.png), pointer !important;
+}
+input[type="text"],
+input[type="password"] {
+  cursor: url(../images/beam.png), text !important;
 }
 
 .mainbody {
@@ -85,8 +101,8 @@ body {
   content: "";
   position: absolute;
   background-size: cover;
-  /* background-image: url(/images/pz112528799.lite.png); */
-  background-image: url(https://t.mwm.moe/mp);
+  background-image: url(/images/pz112528799.lite.png);
+  /* background-image: url(https://t.mwm.moe/mp); */
   /* TODO 根据图片自动改变主题色 */
   background-position: center center;
   /* 设置背景图像的水平位置和垂直位置 */
@@ -101,11 +117,27 @@ body {
   transition: opacity 0.3s ease-in-out;
   z-index: 1;
 }
-#registerForm {
+#registerForm,
+#success {
   display: none;
   position: relative;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+}
+
+#success {
+  justify-content: center;
+}
+#success * {
+  display: block;
+  color: var(--textFocusColor);
+  margin-top: 0.5rem;
+}
+#success h2 {
+  margin-bottom: 50px;
+}
+#retrieve {
+  display: none;
 }
 .mainbody .right {
   display: flex;
@@ -147,6 +179,7 @@ body {
   border-bottom: 1px solid rgba(94, 155, 255, 0.6);
   font-weight: 400;
   border-radius: 0.2rem;
+  user-select: all;
 }
 
 .mainbody .right form .输入框::placeholder {
@@ -253,12 +286,6 @@ body {
   opacity: 1;
 }
 
-.registerForm {
-  opacity: 0;
-  transition: opacity 1s;
-}
-
-/* TODO 页面加载完成时会闪现 */
 .作者链接 {
   position: absolute;
   right: -22px;
