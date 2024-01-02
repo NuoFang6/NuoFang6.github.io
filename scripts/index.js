@@ -30,6 +30,12 @@
 //   //window.onload在页面加载完后执行一次
 //   welcome();
 // };
+// document.onreadystatechange = function () {
+//   if (document.readyState == "complete") {
+//     if (localStorage.getItem("first" != false)) {
+//     }
+//   }
+// };
 
 // ⬆️⬆️之前测试用的，请忽略
 
@@ -37,6 +43,7 @@ function showLogin() {
   document.getElementById("registerForm").style.opacity = "0";
   setTimeout(function () {
     document.getElementById("registerForm").style.display = "none";
+    document.getElementById("h").innerText = "注 册";
     document.getElementById("loginForm").style.display = "flex";
     setTimeout(function () {
       document.getElementById("loginForm").style.opacity = "1";
@@ -54,9 +61,3 @@ function showRegister() {
     }, 300);
   }, 300);
 }
-// document.onreadystatechange = function () {
-//   if (document.readyState == "complete") {
-//     if (localStorage.getItem("first" != false)) {
-//     }
-//   }
-// };

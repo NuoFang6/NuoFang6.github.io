@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="/style/main.css" />
     <link rel="stylesheet" href="/style/mini.css" />
     <link rel="stylesheet" href="/style/loading.css" />
-    <link rel="stylesheet" href="APlayer\dist\APlayer.min.css" />
+    <link rel="stylesheet" href="/style/check.css" />
+    <link rel="stylesheet" href="/style/APlayer.min.css" />
     <!--描述-->
     <meta
       name="description"
@@ -38,7 +39,7 @@
       <!--TODO 记得删掉 -->
       <div class="right" id="loginForm">
         <h1>登&nbsp;录</h1>
-        <form onsubmit="event.preventDefault(),validate()">
+        <form onsubmit="event.preventDefault()">
           <!-- event.preventDefault()用于去除默认行为 -->
           <!-- 表单 -->
           <input
@@ -59,14 +60,22 @@
             pattern="[a-zA-Z0-9]+"
             autocomplete="current-password"
           />
-          <input class="提交" type="submit" value="Login" onclick="login()" />
+          <input
+            class="提交"
+            type="submit"
+            id="LoginSubmit"
+            value="Login"
+            onclick="login()"
+          />
         </form>
         <div class="账号相关">
           <a id="注册账号" href="#" onclick="showRegister(); return false;"
             >注册账号</a
           >
           <!-- 返回 false 阻止浏览器执行默认行为 -->
-          <a id="找回密码" href="#">找回密码</a>
+          <a id="找回密码" href="#" onclick="showRetrieve(); return false"
+            >找回密码</a
+          >
         </div>
         <div id="hitokotoBox">
           『<a class="hitokoto" id="hitokotoMain" target="_blank"
@@ -84,9 +93,11 @@
           ><!--targetblank用于在新标签页中显示链接-->
         </div>
       </div>
+
+      <!-- 注册 -->
       <div class="right" id="registerForm">
-        <h1>注&nbsp;册</h1>
-        <form onsubmit="event.preventDefault(),validate()">
+        <h1 id="h">注&nbsp;册</h1>
+        <form onsubmit="event.preventDefault()">
           <!-- event.preventDefault()用于去除默认行为 -->
           <!-- 表单 -->
           <input
@@ -109,6 +120,7 @@
           />
           <input
             class="提交"
+            id="submit"
             type="submit"
             value="Sign up!"
             onclick="signUp()"
@@ -126,49 +138,47 @@
         <p>目前这里没有什么好看的...</p>
         <a href="#" id="logout" onclick="logout(); return false;">Go Back</a>
       </div>
-      <div class="right" id="retrieve">
-        <form onsubmit="event.preventDefault(),validate()">
-          <!-- event.preventDefault()用于去除默认行为 -->
-          <!-- 表单 -->
-          <input
-            class="输入框"
-            id="registerUsername"
-            type="text"
-            placeholder="用户名"
-            maxlength="30"
-            pattern="[a-zA-Z0-9]+"
-            autocomplete="username"
-          />
-          <input
-            class="输入框"
-            id="registerPassword"
-            type="password"
-            placeholder="密码"
-            maxlength="30"
-            pattern="[a-zA-Z0-9]+"
-            autocomplete="current-password"
-          />
-          <input
-            class="提交"
-            type="submit"
-            value="重置密码"
-            onclick="signUp()"
-          />
-        </form>
-        <div class="账号相关">
-          <a id="返回登录" href="#" onclick="showLogin(); return false;"
-            >已有账号？登录</a
-          >
-        </div>
-      </div>
+
+      <!-- 找回密码 -->
+      <!-- 直接复用 -->
     </div>
+    <div id="打勾">
+      <input type="checkbox" />
+      <svg width="48" height="48">
+        <circle
+          fill="none"
+          stroke="#68E534"
+          stroke-width="2.4"
+          cx="24"
+          cy="24"
+          r="22.8"
+          stroke-linecap="round"
+          transform="rotate(-90 24 24)"
+          class="circle"
+        />
+        <polyline
+          fill="none"
+          stroke="#68E534"
+          stroke-width="2.88"
+          points="10.56,25.92 20.64,34.56 36.96,16.8"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="tick"
+        />
+      </svg>
+      <h3>正在跳转...</h3>
+    </div>
+
     <script src="scripts/hitokoto.js"></script>
     <script src="scripts/index.js" defer></script>
     <script src="scripts/mouse.js"></script>
     <script src="scripts/loading.js"></script>
     <script src="scripts/account.js"></script>
-    <script src="APlayer\dist\APlayer.min.js"></script>
-    <script src="APlayer\meting.min.js"></script>
+    <script src="scripts/APlayer.min.js"></script>
+    <script src="scripts/meting.min.js"></script>
+    <script src="scripts/sakura.js"></script>
+    <!-- <script src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/stevenjoezhang/live2d-widget/master/autoload.js"></script> -->
+    <!-- 不太好用 -->
     <div id="aplayer"></div>
     <meting-js
       id="9104382620"
@@ -178,12 +188,13 @@
       fixed="true"
       olded="random"
       loop="all"
-      autoplay="true"
+      autoplay="false"
       mutex="true"
       volume="0.4"
       preload="auto"
       mini="true"
     >
+      <!-- 记得改回来auto -->
     </meting-js>
   </body>
 </html>

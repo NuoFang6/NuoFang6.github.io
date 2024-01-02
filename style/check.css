@@ -1,0 +1,70 @@
+#打勾 {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  z-index: -10;
+}
+#打勾 h3 {
+  margin-left: 15px;
+  color: var(--textFocusColor);
+  opacity: 0;
+}
+#打勾 svg {
+  display: block;
+  margin-left: 45px;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+input[type="checkbox"]:checked ~ h3 {
+  animation: title 0.6s ease-in-out 1.2s forwards;
+}
+
+.circle {
+  stroke-dasharray: 1194;
+  stroke-dashoffset: 1194;
+}
+
+input[type="checkbox"]:checked + svg .circle {
+  animation: circle 1s ease-in-out forwards;
+}
+
+.tick {
+  stroke-dasharray: 350;
+  stroke-dashoffset: 350;
+}
+
+input[type="checkbox"]:checked + svg .tick {
+  animation: tick 0.8s ease-out 0.95s forwards;
+}
+
+@keyframes circle {
+  from {
+    stroke-dashoffset: 1194;
+  }
+
+  to {
+    stroke-dashoffset: 2388;
+  }
+}
+
+@keyframes tick {
+  from {
+    stroke-dashoffset: 350;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes title {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

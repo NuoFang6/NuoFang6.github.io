@@ -15,6 +15,35 @@
     background-position: 5% 50%;
   }
 }
+@keyframes shakeX {
+  from,
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+/* 定义一个使用shakeX动画的类 */
+.shake {
+  animation: shakeX 0.7s;
+}
+
 :root {
   --textFocusColor: rgb(116, 169, 255);
   --textNoFocusColor: rgba(113, 172, 255, 0.7);
@@ -85,7 +114,7 @@ input[type="password"] {
   margin: 10% auto;
   width: 56rem;
   height: 35rem;
-  background-color: rgba(255, 255, 255, 0.55);
+  background-color: #dbecfe;
   border-radius: 1.5rem;
   box-shadow: 0 0 2rem 0.1rem rgba(0, 0, 0, 0.1);
   z-index: 1;
@@ -136,9 +165,7 @@ input[type="password"] {
 #success h2 {
   margin-bottom: 50px;
 }
-#retrieve {
-  display: none;
-}
+
 .mainbody .right {
   display: flex;
   flex-direction: column;
@@ -213,6 +240,7 @@ input[type="password"] {
     #ffbac3 100%
   );
   animation: flowCss 10s infinite linear;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .mainbody .right form .提交:hover {
