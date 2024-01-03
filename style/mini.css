@@ -73,4 +73,13 @@
     opacity: 1;
   }
   /* TODO 优化触屏显示方式 */
+  label {
+    top: 54px;
+    left: 93px;
+  }
+
+  .input-container:focus-within label {
+    top: 33px;
+    left: 93px;
+  }
 }

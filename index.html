@@ -42,24 +42,28 @@
         <form onsubmit="event.preventDefault()">
           <!-- event.preventDefault()用于去除默认行为 -->
           <!-- 表单 -->
-          <input
-            class="输入框"
-            id="username"
-            type="text"
-            placeholder="用户名"
-            maxlength="30"
-            pattern="[a-zA-Z0-9]+"
-            autocomplete="username"
-          />
-          <input
-            class="输入框"
-            id="password"
-            type="password"
-            placeholder="密码"
-            maxlength="30"
-            pattern="[a-zA-Z0-9]+"
-            autocomplete="current-password"
-          />
+          <div class="input-container">
+            <input
+              class="输入框"
+              id="username"
+              type="text"
+              placeholder=" "
+              maxlength="30"
+              autocomplete="username"
+            />
+            <label for="username">用户名</label>
+          </div>
+          <div class="input-container">
+            <input
+              class="输入框"
+              id="password"
+              type="password"
+              placeholder=" "
+              maxlength="30"
+              autocomplete="current-password"
+            />
+            <label for="password">密码</label>
+          </div>
           <input
             class="提交"
             type="submit"
@@ -84,12 +88,12 @@
         </div>
 
         <div class="作者链接">
-          <a href="https://gitee.com/nuofang" target="_blank"
+          <a href="https://github.com/NuoFang6" target="_blank"
             ><img
-              src="images/gitee-logo-black.lite.svg"
-              alt="作者gitee"
-              title="( •_•)>点击图标跳转我的首页"
-              id="gitee图标" /></a
+              src="images/github.svg"
+              alt="作者GitHub"
+              title="( •_•)>点击图标跳转我的GitHub"
+              id="GitHub图标" /></a
           ><!--targetblank用于在新标签页中显示链接-->
         </div>
       </div>
@@ -100,24 +104,28 @@
         <form onsubmit="event.preventDefault()">
           <!-- event.preventDefault()用于去除默认行为 -->
           <!-- 表单 -->
-          <input
-            class="输入框"
-            id="registerUsername"
-            type="text"
-            placeholder="用户名"
-            maxlength="30"
-            pattern="[a-zA-Z0-9]+"
-            autocomplete="username"
-          />
-          <input
-            class="输入框"
-            id="registerPassword"
-            type="password"
-            placeholder="密码"
-            maxlength="30"
-            pattern="[a-zA-Z0-9]+"
-            autocomplete="current-password"
-          />
+          <div class="input-container">
+            <input
+              class="输入框"
+              id="registerUsername"
+              type="text"
+              placeholder=" "
+              maxlength="30"
+              autocomplete="username"
+            />
+            <label for="username">用户名</label>
+          </div>
+          <div class="input-container">
+            <input
+              class="输入框"
+              id="registerPassword"
+              type="password"
+              placeholder=" "
+              maxlength="30"
+              autocomplete="current-password"
+            />
+            <label for="password">密码</label>
+          </div>
           <input
             class="提交"
             id="submit"

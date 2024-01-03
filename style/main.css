@@ -45,13 +45,13 @@
 }
 
 :root {
-  --textFocusColor: rgb(116, 169, 255);
-  --textNoFocusColor: rgba(113, 172, 255, 0.7);
+  --textFocusColor: rgb(109, 165, 255);
+  --textNoFocusColor: rgba(113, 172, 255, 0.8);
   /* 定义变量 */
   /* DONE 使用变量统一元素 */
 }
 * {
-  font-family: "MiSans";
+  font-family: "MiSans" !important;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -86,7 +86,7 @@ body {
   justify-content: center;
   /* 禁止用户选中文字 */
   user-select: none;
-  /* overflow: hidden; */
+  overflow: hidden;
   /* 禁止滚动 */
 }
 
@@ -114,9 +114,12 @@ input[type="password"] {
   margin: 10% auto;
   width: 56rem;
   height: 35rem;
-  background-color: #dbecfe;
+  background-color: rgba(241, 248, 255, 0.57);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
   border-radius: 1.5rem;
-  box-shadow: 0 0 2rem 0.1rem rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 2rem 0.1rem rgba(0, 0, 0, 0.1); */
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.16);
   z-index: 1;
 }
 
@@ -130,8 +133,8 @@ input[type="password"] {
   content: "";
   position: absolute;
   background-size: cover;
-  /* background-image: url(/images/pz112528799.lite.png); */
-  background-image: url(https://t.mwm.moe/mp);
+  background-image: url(/images/pz112528799.lite.png);
+  /* background-image: url(https://t.mwm.moe/mp); */
   /* TODO 根据图片自动改变主题色 */
   background-position: center center;
   /* 设置背景图像的水平位置和垂直位置 */
@@ -188,9 +191,34 @@ input[type="password"] {
   flex-wrap: wrap;
   /* 允许子元素在需要时进行换行 */
   justify-content: center;
+  /* align-items: center; */
   /* 子元素水平方向居中 */
 }
 
+.input-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+label {
+  display: block;
+  position: absolute;
+  top: 52px;
+  left: 126px;
+  pointer-events: none;
+  transition: 0.2s;
+  font-size: 1rem;
+}
+.input-container input:not(:placeholder-shown) + label,
+.input-container input:focus-within + label {
+  top: 26px;
+  left: 122px;
+  font-size: 12px;
+  color: var(--textFocusColor);
+}
 .mainbody .right form .输入框 {
   box-sizing: border-box;
   outline: none;
@@ -207,22 +235,27 @@ input[type="password"] {
   font-weight: 400;
   border-radius: 0.2rem;
   user-select: all;
+  transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mainbody .right form .输入框::placeholder {
   color: var(--textNoFocusColor);
 }
 
+.mainbody .right form .输入框:hover,
+.mainbody .right form .输入框:focus {
+  background-color: aliceblue;
+}
 .mainbody .right form .输入框:focus {
   border-bottom: 2px solid var(--textFocusColor);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.12);
 }
-.mainbody .right form .输入框:focus::placeholder {
-  color: var(--textFocusColor);
-}
-/* TODO 输入时显示一个背景提高对比度 */
+
+/* DONE 输入时显示一个背景提高对比度 */
 
 .mainbody .right form .提交 {
   will-change: background-position;
+  /* 提高性能不一定有用 */
   outline: none;
   border: none;
   margin: 3.33rem 4rem 0rem 4rem;
@@ -239,12 +272,12 @@ input[type="password"] {
     #c5c1ff 56%,
     #ffbac3 100%
   );
-  animation: flowCss 10s infinite linear;
-  transition: opacity 0.3s ease-in-out;
+  animation: flowCss 9s infinite linear;
+  transition: box-shadow 0.1s linear;
 }
 
 .mainbody .right form .提交:hover {
-  box-shadow: 0 0 1rem -0.2rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.14);
 }
 
 .账号相关 {
@@ -259,29 +292,37 @@ input[type="password"] {
 }
 
 .账号相关 #注册账号,
-.账号相关 #找回密码 {
+.账号相关 #找回密码,
+#返回登录,
+#logout {
   width: auto;
   height: auto;
   margin-right: 5.5rem;
   color: var(--textNoFocusColor);
   text-decoration: none;
   text-align: center;
+  transition: color 0.1s linear, background-color 0.2s linear,
+    box-shadow 0.2s linear;
+  border-radius: 50px;
+  padding: 0.7rem;
 }
 .账号相关 #找回密码 {
   margin-right: 0;
-  margin-left: 5.5rem;
+  margin-left: 3rem;
+}
+#返回登录,
+#logout {
+  margin: 0;
 }
 
 .账号相关 #注册账号:hover,
 .账号相关 #找回密码:hover,
-#返回登录:hover {
+#返回登录:hover,
+#logout:hover {
   color: var(--textFocusColor);
   text-decoration: underline 1px var(--textFocusColor);
-}
-#返回登录 {
-  color: var(--textNoFocusColor);
-  text-decoration: none;
-  text-align: center;
+  background-color: aliceblue;
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.12);
 }
 .mainbody .right #hitokotoBox {
   display: block;
@@ -316,11 +357,23 @@ input[type="password"] {
 
 .作者链接 {
   position: absolute;
-  right: -22px;
-  bottom: 3px;
+  right: 5px;
+  bottom: 1px;
 }
 
-.作者链接 #gitee图标 {
-  width: 40px;
+.作者链接 #GitHub图标 {
+  width: 15px;
   opacity: 5%;
+  transition: opacity 0.5s linear;
+}
+.作者链接 #GitHub图标:hover {
+  opacity: 1;
+}
+.aplayer-list {
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 0.12);
+  border-radius: 1px;
+}
+.aplayer-body {
+  border-radius: 1rem !important;
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.12) !important;
 }
