@@ -1,0 +1,77 @@
+.mainbody,
+.loadMask {
+  display: none;
+}
+#ie {
+  display: block;
+  align-self: center;
+  text-align: center;
+  width: 75%;
+  height: 40%;
+  z-index: 99;
+}
+* {
+  text-decoration: none;
+  color: rgb(93, 155, 255);
+  /* user-select: none; */
+}
+ul {
+  display: flex;
+}
+ul,
+li {
+  list-style: none;
+  justify-content: center;
+}
+.title {
+  padding-top: 20px;
+}
+.title span {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0 5px;
+  border-radius: 4px;
+  color: black;
+}
+.center-title {
+  color: #000000;
+  font-size: 20px;
+  text-align: center;
+  margin: 50px 0 12px 0;
+}
+.highline {
+  color: #ff6699;
+}
+.title-line {
+  width: 100%;
+  display: block;
+  height: 1px;
+  background-color: #f1f2f3;
+  margin-top: -10px;
+  color: #999;
+}
+.browser-item {
+  height: 140px;
+  background: #f1f2f3;
+  border-radius: 8px;
+  width: 145px;
+  margin-right: 6px;
+  margin-left: 6px;
+  margin-top: 18px;
+  padding: 20px 0;
+  display: flex;
+  transition: 0.3s;
+  text-align: center;
+  justify-content: center;
+}
+.browser-item:hover {
+  background: #e3e5e7;
+}
+
+.browser-name {
+  color: #61666d !important;
+  font-weight: bold;
+}
+
+.list img {
+  width: 50%;
+}

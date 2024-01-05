@@ -14,4 +14,7 @@ function loadingFade() {
   loadingBackground.addEventListener("transitionend", function () {
     loadingBackground.remove();
   });
+  // var username = document.getElementById("username").value;
+  // var password = document.getElementById("password").value;
+  // localStorage.setItem(username, password);
 }

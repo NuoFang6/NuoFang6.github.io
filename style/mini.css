@@ -77,9 +77,9 @@
     top: 54px;
     left: 93px;
   }
-
-  .input-container:focus-within label {
-    top: 33px;
-    left: 93px;
+  .input-container input:not(:placeholder-shown) + label,
+  .input-container input:focus-within + label {
+    top: 25px;
+    left: 91px;
   }
 }

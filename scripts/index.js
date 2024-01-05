@@ -61,3 +61,25 @@ function showRegister() {
     }, 300);
   }, 300);
 }
+document.getElementById("refresh").addEventListener("click", function () {
+  var rfimg = document.getElementById("rfimg");
+  rfimg.classList.add("rotate");
+  setTimeout(function () {
+    rfimg.classList.remove("rotate");
+  }, 1000);
+  //重新获取
+  var timestamp = new Date().getTime();
+  var css =
+    ".mainbody .left::before { background-image: url(https://t.mwm.moe/mp?" +
+    timestamp +
+    "); }";
+  var style = document.createElement("style");
+
+  if (style.styleSheet) {
+    style.styleSheet.cssText = css;
+  } else {
+    style.appendChild(document.createTextNode(css));
+  }
+
+  document.getElementsByTagName("head")[0].appendChild(style);
+});

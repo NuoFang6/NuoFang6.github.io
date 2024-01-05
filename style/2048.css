@@ -1,0 +1,88 @@
+#game {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+#over {
+  color: orange;
+  opacity: 0;
+  transition: all 0.5s;
+  position: relative;
+  top: -45px;
+  font-weight: bold;
+  font-size: 27px;
+}
+#tiShi {
+  font-size: small;
+  position: relative;
+  top: -40px;
+  left: -55px;
+}
+header {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+header #newGame {
+  display: inline;
+  position: relative;
+  top: 50px;
+  left: 50px;
+  margin: 10px auto;
+  width: 90px;
+  padding: 8px 10px;
+  background-color: #8f7a66;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+  z-index: 99;
+}
+
+header #newGame:hover {
+  background-color: #9f8b77;
+}
+
+header p {
+  font-weight: bold;
+  font-size: 20px;
+  position: relative;
+  left: -70px;
+}
+
+#grid-container {
+  width: 230px;
+  height: 230px;
+  padding: 10px;
+  position: relative;
+  border-radius: 5px;
+  margin: 10px auto;
+  background-color: #bbada0;
+}
+
+.grid-cell {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-color: #ccc0b3;
+  border-radius: 3px;
+}
+
+.number-cell {
+  position: absolute;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 3px;
+}
+
+@media screen and (orientation: portrait) {
+  header p {
+    font-size: 20px;
+    margin: 20px auto;
+  }
+  #tiShi {
+    display: none;
+  }
+}

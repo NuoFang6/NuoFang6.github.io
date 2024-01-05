@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/style/loading.css" />
     <link rel="stylesheet" href="/style/check.css" />
     <link rel="stylesheet" href="/style/APlayer.min.css" />
+    <link rel="stylesheet" href="/style/2048.css" />
     <!--描述-->
     <meta
       name="description"
@@ -35,7 +36,15 @@
       </div>
     </div>
     <div class="mainbody">
-      <div class="left"></div>
+      <div class="left">
+        <button id="refresh">
+          <img src="images/refresh.png" id="rfimg" />
+        </button>
+      </div>
+      <!-- <button id="download">
+          <img src="images/download.png" id="dlimg" />
+        </button>
+      </div> -->
       <!--TODO 记得删掉 -->
       <div class="right" id="loginForm">
         <h1>登&nbsp;录</h1>
@@ -142,6 +151,38 @@
         <!-- 返回 false 阻止浏览器执行默认行为 -->
       </div>
       <div class="right" id="success">
+        <div id="game">
+          <header>
+            <a href="#" onclick="newGame(); return false;" id="newGame"
+              >New Game</a
+            >
+            <p>score:<span id="score">0</span></p>
+          </header>
+
+          <div id="grid-container">
+            <div class="grid-cell" id="grid-cell-0-0"></div>
+            <div class="grid-cell" id="grid-cell-0-1"></div>
+            <div class="grid-cell" id="grid-cell-0-2"></div>
+            <div class="grid-cell" id="grid-cell-0-3"></div>
+
+            <div class="grid-cell" id="grid-cell-1-0"></div>
+            <div class="grid-cell" id="grid-cell-1-1"></div>
+            <div class="grid-cell" id="grid-cell-1-2"></div>
+            <div class="grid-cell" id="grid-cell-1-3"></div>
+
+            <div class="grid-cell" id="grid-cell-2-0"></div>
+            <div class="grid-cell" id="grid-cell-2-1"></div>
+            <div class="grid-cell" id="grid-cell-2-2"></div>
+            <div class="grid-cell" id="grid-cell-2-3"></div>
+
+            <div class="grid-cell" id="grid-cell-3-0"></div>
+            <div class="grid-cell" id="grid-cell-3-1"></div>
+            <div class="grid-cell" id="grid-cell-3-2"></div>
+            <div class="grid-cell" id="grid-cell-3-3"></div>
+          </div>
+        </div>
+        <div id="tiShi">*使用方向键操作</div>
+        <div id="over">Game Over!</div>
         <h2>登录成功</h2>
         <p>目前这里没有什么好看的...</p>
         <a href="#" id="logout" onclick="logout(); return false;">Go Back</a>
@@ -176,15 +217,63 @@
       </svg>
       <h3>正在跳转...</h3>
     </div>
+    <div id="ie">
+      <h1>您的浏览器版本过低哦</h1>
+      <h3>来尝试更现代的浏览器吧！</h3>
+      <div class="title">
+        <span>升级您的浏览器</span>
+        <div class="title-line"></div>
+      </div>
+      <div class="list">
+        <ul>
+          <li class="browser-item">
+            <a href="https://www.microsoft.com/zh-cn/edge/" target="_blank">
+              <img id="Edge" src="images/Microsoft Edge.svg" /><br />
+              <span class="browser-name">Edge</span><br />
+              <span>微软浏览器</span>
+            </a>
+          </li>
+          <li class="browser-item">
+            <a href="https://www.google.com/intl/zh-CN/chrome/" target="_blank">
+              <img id="Chrome" src="images/Google Chrome.svg" /><br />
+              <span class="browser-name">Chrome</span><br />
+              <span>谷歌浏览器</span>
+            </a>
+          </li>
+          <li class="browser-item">
+            <a href="https://www.firefox.com.cn/" target="_blank">
+              <img id="Firefox" src="images/Firefox.svg" />
+              <br />
+              <span class="browser-name">Firefox</span><br />
+              <span>火狐浏览器</span>
+            </a>
+          </li>
 
-    <script src="scripts/hitokoto.js"></script>
+          <li class="browser-item">
+            <a href="https://www.opera.com/zh-cn/browsers" target="_blank">
+              <img id="Opera" src="images/Opera Browser.svg" />
+              <br />
+              <span class="browser-name">Opera</span><br />
+              <span>欧朋浏览器</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="scripts/ie.js"></script>
     <script src="scripts/index.js" defer></script>
-    <script src="scripts/mouse.js"></script>
-    <script src="scripts/loading.js"></script>
-    <script src="scripts/account.js"></script>
-    <script src="scripts/APlayer.min.js"></script>
-    <script src="scripts/meting.min.js"></script>
+    <script src="scripts/hitokoto.js" class="notie"></script>
+    <script src="scripts/mouse.js" class="notie"></script>
+    <script src="scripts/loading.js" class="notie"></script>
+    <script src="scripts/account.js" class="notie"></script>
+    <script src="scripts/APlayer.min.js" class="notie"></script>
+    <script src="scripts/meting.min.js" class="notie"></script>
     <script src="scripts/sakura.js"></script>
+    <script src="scripts/2048/jquery-2.2.1.min.js"></script>
+    <script src="scripts/2048/support.js"></script>
+    <script src="scripts/2048/showAnimation.js"></script>
+    <script src="scripts/2048/main.js"></script>
+    <!-- <script src="scripts/background.js"></script> -->
     <!-- <script src="https://mirror.ghproxy.com/https://raw.githubusercontent.com/stevenjoezhang/live2d-widget/master/autoload.js"></script> -->
     <!-- 不太好用 -->
     <div id="aplayer"></div>
@@ -196,9 +285,9 @@
       fixed="true"
       olded="random"
       loop="all"
-      autoplay="false"
+      autoplay="true"
       mutex="true"
-      volume="0.4"
+      volume="0.15"
       preload="auto"
       mini="true"
     >

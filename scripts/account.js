@@ -28,6 +28,7 @@ function login() {
   var password = document.getElementById("password").value;
   var correctPassword = localStorage.getItem(username);
   if (password == correctPassword) {
+    newGame();
     showSuccess();
   } else {
     fail();
