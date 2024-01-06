@@ -1,6 +1,6 @@
 @font-face {
   font-family: "MiSans";
-  src: url("../fonts/MiSans/MiSansVF.ttf") format("truetype");
+  src: url("./MiSansVF.ttf") format("truetype");
   /* VF可变字体无需设置font-weight:  */
   /* TODO 提高加载速度 */
 }
